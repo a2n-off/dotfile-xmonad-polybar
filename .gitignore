@@ -1,0 +1,40 @@
+# ignore all
+*
+
+# not this file
+!.gitignore
+
+# dot file folder
+!.config
+
+!.config/polybar
+!.config/polybar/**
+
+!.config/xmonad
+.config/xmonad/.stack-work
+!.config/xmonad/**
+
+!.config/picom
+!.config/picom/**
+
+!.config/rofi
+!.config/rofi/**
+
+!.config/dunst
+!.config/dunst/**
+
+!.config/fontconfig
+!.config/fontconfig/**
+
+!.config/nitrogen
+!.config/nitrogen/**
+
+!.config/betterlockscreenrc
+
+!Pictures
+!Pictures/*
+
+!.xsession
+
+# ignore prod env
+.config/polybar/scripts/env.sh
