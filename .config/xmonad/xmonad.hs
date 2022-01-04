@@ -243,8 +243,8 @@ polybarLogHook dbus = def { ppOutput = D.send dbus
                      , ppUrgent = wrap ("%{F" ++ red ++ "}") "%{F-}" -- urgent workspace
                      , ppHidden = wrap ("%{F" ++ haveWColor ++ "}") "%{F-}" -- hidden but have window
                      , ppHiddenNoWindows = wrap ("%{F" ++ inactiveColor ++ "}") "%{F-}" -- hidden but not have window
-                     , ppWsSep = "+" -- separator between workspace (1, 2, 3, ...)
-                     , ppSep = ":" -- separator between log section (window name, layout, workspace)
+                     , ppWsSep = " " -- separator between workspace (1, 2, 3, ...)
+                     , ppSep = " : " -- separator between log section (window name, layout, workspace)
                      , ppTitle =  wrap ("%{F" ++ green ++ "} ") " %{F-}" . shorten 40 -- current window title
                      }
   where green = "#00ff00"
@@ -283,6 +283,7 @@ myLogHook = return ()
 myStartupHook = do
     spawnOnce "picom &"
     spawnOnce "nitrogen --restore &"
+    spawnOnce "deadd-notification-center &"
     spawn "~/.config/polybar/launch.sh"
 
 -- ---------------------------------------------------------------------
